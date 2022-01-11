@@ -1,6 +1,8 @@
 #ifndef __MONTY_H__
 #define __MONTY_H__
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -31,4 +33,6 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/*prototypes functions*/
+void push(stack_t **head, unsigned int line_number);
 #endif /*__MONTY_H__*/
