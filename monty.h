@@ -32,6 +32,25 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/**
+ * struct data_jf - Data we need in all programm
+ *
+ * @fd: File descriptor we open
+ * @commands: All commands we have in the file
+ * @value: All value associate with commands
+ */
+typedef struct data_jf
+{
+	int fd;
+	char **commands;
+	char **value;
+} data;
+
+extern data monty_data;
+
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void *_calloc(unsigned int nmemb, unsigned int size);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 
