@@ -68,6 +68,7 @@ typedef struct data_jf
 {
 	int fd;
 	line_t *commands;
+	line_t *current;
 } data;
 
 extern data *monty_data;
@@ -90,6 +91,9 @@ void _mul(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
+void _rotl(stack_t **stack, unsigned int line_number);
+void _rotr(stack_t **stack, unsigned int line_number);
+void free_stack(stack_t **head);
 void free_stack(stack_t **head);
 
 /* Functions for the main program */
@@ -101,4 +105,8 @@ void parse(char *line);
 void (*_get_func(line_t *current))(stack_t **stack, unsigned int line_number);
 void execute_monty(void);
 
+/*utils function*/
+int len_of_the_stack(stack_t **stack);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void *_calloc(unsigned int nmemb, unsigned int size);
 #endif /*__MONTY_H__*/
