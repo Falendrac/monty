@@ -10,11 +10,11 @@
 void (*_get_func(line_t *current))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruc[] = {
-								{"push", _push},
-								{"pall", _pall},
-								/**{"pint", _push},*/
-								{NULL, NULL}
-							};
+	    {"push", _push},
+	    {"pop", _pop},
+	    {"pall", _pall},
+	    /**{"pint", _push},*/
+	    {NULL, NULL}};
 	int i = 0;
 
 	while (instruc[i].opcode != NULL)
