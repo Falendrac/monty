@@ -16,7 +16,7 @@ void (*_get_func(line_t *current))(stack_t **stack, unsigned int line_number)
 	    {"pint", _pint},
 	    {"swap", _swap},
 	    {"add", _add},
-	    /**{"pint", _push},*/
+	    {"nop", _nop},
 	    {NULL, NULL}};
 	int i = 0;
 
