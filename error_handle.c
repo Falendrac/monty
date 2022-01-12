@@ -18,22 +18,21 @@ void exit_procedure(int exitNum, int line_number, char **argv, char *opcode)
 	switch (exitNum)
 	{
 	case 0:
-		fprintf(stderr, "USAGE: monty file");
+		fprintf(stderr, "USAGE: monty file\n");
 		break;
 	case 1:
-		fprintf(stderr, "Error: Can't open file %s", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		break;
 	case 2:
-		fprintf(stderr, "Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		break;
 	case 3:
-		fprintf(stderr, "L%d: unknown instruction %s", line_number, opcode);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 		break;
 	case 4:
-		fprintf(stderr, "L%d: usage: push integer", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		break;
 	}
-	printf("\n");
 	free_line_t();
 	free(monty_data);
 	exit(EXIT_FAILURE);
