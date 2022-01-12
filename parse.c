@@ -10,9 +10,9 @@
  */
 void take_line(void)
 {
-	int buffer_size = 1086, rd, i = 0, j, diff = 0;
-	char buffer[1086];
-	char line[256] = { '\0' };
+	int buffer_size = 4096, rd, i = 0, j, diff = 0;
+	char buffer[4096];
+	char line[256] = {'\0'};
 
 	rd = read(monty_data->fd, buffer, buffer_size);
 	buffer[rd] = '\0';
