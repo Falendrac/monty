@@ -9,8 +9,6 @@ void _swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr1, *ptr2;
 
-	if (stack == NULL || *stack == NULL)
-		exit(EXIT_FAILURE);
 	if (len_of_the_stack(stack) < 2)
 	{
 		_free_stack(stack);
