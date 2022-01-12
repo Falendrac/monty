@@ -20,7 +20,8 @@ void _swap(stack_t **stack, unsigned int line_number)
 	ptr1 = *stack;
 	ptr2 = (*stack)->next;
 	ptr1->next = ptr2->next;
-	ptr2->next->prev = ptr1;
+	if (len_of_the_stack(stack) > 2)
+		ptr2->next->prev = ptr1;
 	ptr1->prev = ptr2;
 	ptr2->next = ptr1;
 	ptr2->prev = NULL;
