@@ -27,6 +27,7 @@ int main(int argc, char **argv)
 
 	monty_data->fd = fd;
 	monty_data->commands = NULL;
+	monty_data->current = NULL;
 
 	take_line();
 	execute_monty();
