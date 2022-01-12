@@ -10,7 +10,7 @@
 void (*_get_func(line_t *current))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruc[] = {
-								/**{"push", _push},*/
+								{"push", _push},
 								{"pall", _pall},
 								/**{"pint", _push},*/
 								{NULL, NULL}
@@ -45,6 +45,7 @@ void execute_monty(void)
 		if (f == NULL)
 			exit_procedure(3, current->line_number, NULL, current->commands);
 
+		monty_data->current = current;
 		f(&stack, current->line_number);
 		current = current->next;
 	}

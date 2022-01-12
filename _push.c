@@ -8,22 +8,19 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
-	int value;
-	line_t *current = monty_data->commands;
+	line_t *current = monty_data->current;
 
-	if (stack == NULL)
-		return (NULL);
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
-		exit_procedure(2, 0, NULL, NULL);
-	if (len(monty_data->value[line_number]) == 1)
+		exit_procedure(2, line_number, NULL, NULL);
+	if (strlen(current->value) == 1)
 	{
-		if (monty_data->value[line_number][0] == 48)
+		if (current->value[0] == 48)
 			new->n = 0;
 		else
-			new->n = atoi(monty_data->value[line_number]);
+			new->n = atoi(current->value);
 	}
-	new->n = atoi(monty_data->value[line_number]);
+	new->n = atoi(current->value);
 	if (*stack == NULL)
 	{
 		new->prev = NULL;

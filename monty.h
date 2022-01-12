@@ -68,6 +68,7 @@ typedef struct data_jf
 {
 	int fd;
 	line_t *commands;
+	line_t *current;
 } data;
 
 extern data *monty_data;
