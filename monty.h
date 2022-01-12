@@ -62,7 +62,7 @@ typedef struct command_line
  *
  * @fd: File descriptor we open
  * @commands: All commands we have in the file
- * @value: All value associate with commands
+ * @current: The current node line_t for push command
  */
 typedef struct data_jf
 {
