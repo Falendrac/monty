@@ -13,8 +13,8 @@ void take_line(void)
 	int buffer_size = 1024;
 	char buffer[1024];
 
-	while(fgets(buffer, buffer_size, monty_data->fd) != NULL)
-			parse(buffer);
+	while (fgets(buffer, buffer_size, monty_data->fd) != NULL)
+		parse(buffer);
 
 }
 
