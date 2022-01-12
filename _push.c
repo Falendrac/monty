@@ -54,6 +54,8 @@ int _is_number(void)
 	char *value = monty_data->current->value;
 	int i = 0, boolean = 1;
 
+	if (value[i] == '-' || value[i] == '+')
+		i++;
 	while (value[i] != '\0')
 	{
 		if (value[i] < '0' || value[i] > '9')
@@ -63,8 +65,7 @@ int _is_number(void)
 		}
 		i++;
 	}
-
-	if (i == 0)
+	if (i == 0 || (i == 1 && value[i - 1] <= '-'))
 		boolean = 0;
 
 	return (boolean);
