@@ -35,5 +35,5 @@ int main(int argc, char **argv)
 	free(monty_data);
 	close(fd);
 
-	return (0);
+	return (EXIT_SUCCESS);
 }
