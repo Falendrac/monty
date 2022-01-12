@@ -11,8 +11,11 @@ void _swap(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL)
 		exit(EXIT_FAILURE);
-	if (len_of_the_stack(&*stack) < 2)
+	if (len_of_the_stack(stack) < 2)
 	{
+		_free_stack(stack);
+		free_line_t();
+		free(monty_data);
 		printf("L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
