@@ -15,6 +15,8 @@
  */
 void exit_procedure(int exitNum, int line_number, char **argv, char *opcode)
 {
+	free_line_t();
+	free(monty_data);
 	switch (exitNum)
 	{
 	case 0:
@@ -29,7 +31,8 @@ void exit_procedure(int exitNum, int line_number, char **argv, char *opcode)
 	case 3:
 		fprintf(stderr, "L<%d>: unknown instruction <%s>\n", line_number, opcode);
 		exit(EXIT_FAILURE);
-	default:
-		break;
+	case 4:
+		fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
 	}
 }

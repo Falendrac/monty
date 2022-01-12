@@ -1,18 +1,16 @@
 #include "monty.h"
 /**
  * free_stack - delete all nodes of the stack
- * @head: address of the pointer of the element at the top pf the stack
+ * @stack: address of the pointer of the element at the top pf the stack
  */
-void free_stack(stack_t **head)
+void _free_stack(stack_t **stack)
 {
 	stack_t *temp;
 
-	if (*head == NULL)
-		return;
-	while (head)
+	while (*stack != NULL)
 	{
-		temp = *head;
-		*head = (*head)->next;
+		temp = *stack;
+		*stack = (*stack)->next;
 		free(temp);
 	}
 }
