@@ -15,8 +15,6 @@
  */
 void exit_procedure(int exitNum, int line_number, char **argv, char *opcode)
 {
-	free_line_t();
-	free(monty_data);
 	switch (exitNum)
 	{
 	case 0:
@@ -36,5 +34,7 @@ void exit_procedure(int exitNum, int line_number, char **argv, char *opcode)
 		break;
 	}
 	printf("\n");
+	free_line_t();
+	free(monty_data);
 	exit(EXIT_FAILURE);
 }
