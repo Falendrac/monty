@@ -16,7 +16,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 		exit_procedure(2, 0, NULL, NULL);
-	if (len(monty_data->value[line_number]) == 1)
+	if (strlen(monty_data->value[line_number]) == 1)
 	{
 		if (monty_data->value[line_number][0] == 48)
 			new->n = 0;
