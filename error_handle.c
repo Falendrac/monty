@@ -33,7 +33,10 @@ void exit_procedure(int exitNum, int line_number, char **argv, char *opcode)
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		break;
 	}
-	free_line_t();
-	free(monty_data);
+	if (exitNum > 2)
+	{
+		free_line_t();
+		free(monty_data);
+	}
 	exit(EXIT_FAILURE);
 }
