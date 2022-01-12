@@ -66,7 +66,7 @@ typedef struct command_line
  */
 typedef struct data_jf
 {
-	int fd;
+	FILE *fd;
 	line_t *commands;
 	line_t *current;
 } data;

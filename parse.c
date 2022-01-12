@@ -10,26 +10,12 @@
  */
 void take_line(void)
 {
-	int buffer_size = 4096, rd, i = 0, j, diff = 0;
-	char buffer[4096];
-	char line[256] = {'\0'};
+	int buffer_size = 1024;
+	char buffer[1024];
 
-	rd = read(monty_data->fd, buffer, buffer_size);
-	buffer[rd] = '\0';
+	while(fgets(buffer, buffer_size, monty_data->fd) != NULL)
+			parse(buffer);
 
-	while (i < rd)
-	{
-		line[i - diff] = buffer[i];
-		i++;
-		if (buffer[i] == '\n')
-		{
-			parse(line);
-			for (j = 0; j < 256; j++)
-				line[j] = '\0';
-			i++;
-			diff = i;
-		}
-	}
 }
 
 /**

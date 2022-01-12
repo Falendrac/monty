@@ -11,13 +11,13 @@ data *monty_data;
  */
 int main(int argc, char **argv)
 {
-	int fd;
+	FILE *fd;
 
 	if (argc == 1 || argc > 2)
 		exit_procedure(0, 0, argv, NULL);
 
-	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
+	fd = fopen(argv[1], "r");
+	if (fd == NULL)
 		exit_procedure(1, 0, argv, NULL);
 
 	monty_data = malloc(sizeof(data));
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 
 	free_line_t();
 	free(monty_data);
-	close(fd);
+	fclose(fd);
 
 	return (EXIT_SUCCESS);
 }
