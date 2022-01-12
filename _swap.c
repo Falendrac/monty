@@ -14,7 +14,8 @@ void _swap(stack_t **stack, unsigned int line_number)
 		_free_stack(stack);
 		free_line_t();
 		free(monty_data);
-		printf("L%d: can't swap, stack too short\n", line_number);
+		printf("L%d: can't swap, stack too short", line_number);
+		printf("\n");
 		exit(EXIT_FAILURE);
 	}
 	ptr1 = *stack;
