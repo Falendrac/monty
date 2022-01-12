@@ -9,6 +9,9 @@ void _pint(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
 	{
+		_free_stack(stack);
+		free_line_t();
+		free(monty_data);
 		printf(" L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
