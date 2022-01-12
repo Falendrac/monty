@@ -13,7 +13,6 @@ int main(int argc, char **argv)
 {
 	int fd;
 
-
 	if (argc == 1 || argc > 2)
 		exit_procedure(0, 0, argv, NULL);
 

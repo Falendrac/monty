@@ -43,8 +43,8 @@ void parse(char *line)
 
 	if (line != NULL)
 	{
-		comm = strtok(line, " \t");
-		value = strtok(NULL, " \t");
+		comm = strtok(line, " \t\n");
+		value = strtok(NULL, " \t\n");
 
 		comm = _strdup(comm);
 		value = _strdup(value);

@@ -5,7 +5,8 @@
  * @line_number: number of the line in the file
  */
 
-void _nop(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int line_number)
+void _nop(stack_t **stack, unsigned int line_number)
 {
-	;
+	stack = stack;
+	line_number = line_number;
 }

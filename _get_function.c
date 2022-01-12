@@ -37,7 +37,7 @@ void (*_get_func(line_t *current))(stack_t **stack, unsigned int line_number)
 void execute_monty(void)
 {
 	line_t *current;
-	void (*f)(stack_t * *stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_number);
 	stack_t *stack = NULL;
 
 	current = monty_data->commands;
@@ -46,10 +46,13 @@ void execute_monty(void)
 	{
 		f = _get_func(current);
 		if (f == NULL)
+		{
+			_free_stack(&stack);
 			exit_procedure(3, current->line_number, NULL, current->commands);
-
+		}
 		monty_data->current = current;
 		f(&stack, current->line_number);
 		current = current->next;
 	}
+	_free_stack(&stack);
 }
