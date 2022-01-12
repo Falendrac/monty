@@ -11,7 +11,8 @@ void _pint(stack_t **stack, unsigned int line_number)
 	{
 		free_line_t();
 		free(monty_data);
-		printf(" L%d: can't pint, stack empty\n", line_number);
+		printf(" L%d: can't pint, stack empty", line_number);
+		printf("\n");
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);

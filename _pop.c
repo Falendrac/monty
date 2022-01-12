@@ -13,7 +13,8 @@ void _pop(stack_t **stack, unsigned int line_number)
 	{
 		free_line_t();
 		free(monty_data);
-		printf("L%d: can't pop an empty stack\n", line_number);
+		printf("L%d: can't pop an empty stack", line_number);
+		printf("\n");
 		exit(EXIT_FAILURE);
 	}
 	ptr = *stack;
