@@ -46,7 +46,7 @@ julien@ubuntu:~/monty
 
 The command to run the program is as follows:
 ```
-./monty bytecodes/00.m
+./monty ./00.m
 ```
 
 
@@ -123,6 +123,6 @@ School
 ***
 
 ## Authors: 
-Franck LEGER : [GitHub](https://https://github.com/Falendrac)
+Franck LEGER : [GitHub](https://github.com/Falendrac)
 
 Joel DUMORTIER : [GitHub](https://github.com/jodt/)
