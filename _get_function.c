@@ -52,14 +52,17 @@ void execute_monty(void)
 
 	while (current != NULL)
 	{
-		f = _get_func(current);
-		if (f == NULL)
+		if (current->commands[0] != '#')
 		{
-			_free_stack(&stack);
-			exit_procedure(3, current->line_number, NULL, current->commands);
+			f = _get_func(current);
+			if (f == NULL)
+			{
+				_free_stack(&stack);
+				exit_procedure(3, current->line_number, NULL, current->commands);
+			}
+			monty_data->current = current;
+			f(&stack, current->line_number);
 		}
-		monty_data->current = current;
-		f(&stack, current->line_number);
 		current = current->next;
 	}
 	_free_stack(&stack);
