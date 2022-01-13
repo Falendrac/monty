@@ -17,6 +17,14 @@ void (*_get_func(line_t *current))(stack_t **stack, unsigned int line_number)
 	    {"swap", _swap},
 	    {"add", _add},
 	    {"nop", _nop},
+	    {"sub", _sub},
+	    {"div", _div},
+	    {"mul", _mul},
+	    {"mod", _mod},
+	    {"pchar", _pchar},
+	    {"pstr", _pstr},
+	    {"rotl", _rotl},
+	    {"rotr", _rotr},
 	    {NULL, NULL}};
 	int i = 0;
 
@@ -37,7 +45,7 @@ void (*_get_func(line_t *current))(stack_t **stack, unsigned int line_number)
 void execute_monty(void)
 {
 	line_t *current;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t * *stack, unsigned int line_number);
 	stack_t *stack = NULL;
 
 	current = monty_data->commands;
