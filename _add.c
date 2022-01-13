@@ -13,6 +13,7 @@ void _add(stack_t **stack, unsigned int line_number)
 	{
 		_free_stack(stack);
 		free_line_t();
+		fclose(monty_data->fd);
 		free(monty_data);
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
