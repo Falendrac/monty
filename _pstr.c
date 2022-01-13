@@ -18,16 +18,11 @@ void _pstr(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	while (current)
 	{
 		if ((current)->n == 0)
-		{
-			printf("\n");
 			break;
-		}
-		if ((current)->n >= 0 && (current)->n <= 127)
-		{
-			printf("%c", (current)->n);
-			if (current->next == NULL && current->n != 0)
-				printf("\n");
-		}
+		if (current->n < 0 || current->n > 127)
+			break;
+		printf("%c", (current)->n);
 		current = (current)->next;
 	}
+	printf("\n");
 }
