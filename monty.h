@@ -98,10 +98,10 @@ int _is_number(void);
 
 /* Functions for the main program */
 void exit_procedure(int exitNum, int line_number, char **argv, char *opcode);
-line_t *new_line_t_end(char *commands, char *value);
+line_t *new_line_t_end(char *commands, char *value, int line_number);
 void free_line_t(void);
 void take_line(void);
-void parse(char *line);
+void parse(char *line, int line_number);
 void (*_get_func(line_t *current))(stack_t **stack, unsigned int line_number);
 void execute_monty(void);
 

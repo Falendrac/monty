@@ -10,11 +10,14 @@
  */
 void take_line(void)
 {
-	int buffer_size = 1024;
+	int buffer_size = 1024, line_number = 0;
 	char buffer[1024];
 
 	while (fgets(buffer, buffer_size, monty_data->fd) != NULL)
-		parse(buffer);
+	{
+		line_number++;
+		parse(buffer, line_number);
+	}
 
 }
 
@@ -22,8 +25,9 @@ void take_line(void)
  * parse - Parse the current line with space and tab separators
  *
  * @line: Current line for parsing
+ * @line_number: The line number of the line
  */
-void parse(char *line)
+void parse(char *line, int line_number)
 {
 	char *comm, *value;
 
@@ -35,6 +39,6 @@ void parse(char *line)
 		comm = _strdup(comm);
 		value = _strdup(value);
 		if (comm != NULL)
-			new_line_t_end(comm, value);
+			new_line_t_end(comm, value, line_number);
 	}
 }

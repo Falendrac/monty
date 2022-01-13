@@ -5,10 +5,11 @@
  *
  * @commands: Commands catch with getline
  * @value: Value associate with the commands
+ * @line_number: The line number of the command
  *
  * Return: NULL if malloc fail, new node otherwise
  */
-line_t *new_line_t_end(char *commands, char *value)
+line_t *new_line_t_end(char *commands, char *value, int line_number)
 {
 	line_t *new, *current;
 
@@ -18,13 +19,13 @@ line_t *new_line_t_end(char *commands, char *value)
 
 	new->commands = commands;
 	new->value = value;
+	new->line_number = line_number;
 	new->next = NULL;
 	new->prev = NULL;
 
 	if (monty_data->commands == NULL)
 	{
 		monty_data->commands = new;
-		monty_data->commands->line_number = 1;
 		return (new);
 	}
 	else
@@ -35,7 +36,6 @@ line_t *new_line_t_end(char *commands, char *value)
 			current = current->next;
 
 		new->prev = current;
-		new->line_number = current->line_number + 1;
 		current->next = new;
 	}
 
