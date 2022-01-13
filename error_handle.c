@@ -8,6 +8,7 @@
  * 1: The file cannot be open
  * 2: Malloc failed
  * 3: Unknow instrcution
+ * 4: Wrong value for push
  *
  * @line_number: The line number that occur an error
  * @argv: All arguments value passes in the program
