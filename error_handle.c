@@ -36,6 +36,7 @@ void exit_procedure(int exitNum, int line_number, char **argv, char *opcode)
 	if (exitNum > 2)
 	{
 		free_line_t();
+		fclose(monty_data->fd);
 		free(monty_data);
 	}
 	exit(EXIT_FAILURE);
