@@ -9,6 +9,9 @@
 #include <unistd.h>
 #include <string.h>
 
+#define STACK 0
+#define QUEUE 1
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -63,12 +66,16 @@ typedef struct command_line
  * @fd: File descriptor we open
  * @commands: All commands we have in the file
  * @current: The current node line_t for push command
+ * @order: Set the order of the stack with macro
+ * STACK and QUEUE, when command stack and queue is insert
+ * default is STACK
  */
 typedef struct data_jf
 {
 	FILE *fd;
 	line_t *commands;
 	line_t *current;
+	int order;
 } data;
 
 extern data *monty_data;

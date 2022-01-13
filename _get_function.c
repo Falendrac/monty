@@ -54,14 +54,21 @@ void execute_monty(void)
 	{
 		if (current->commands[0] != '#')
 		{
-			f = _get_func(current);
-			if (f == NULL)
+			if (strcmp("stack", current->commands) == 0)
+				monty_data->order = STACK;
+			else if (strcmp("queue", current->commands) == 0)
+				monty_data->order = QUEUE;
+			else
 			{
-				_free_stack(&stack);
-				exit_procedure(3, current->line_number, NULL, current->commands);
+				f = _get_func(current);
+				if (f == NULL)
+				{
+					_free_stack(&stack);
+					exit_procedure(3, current->line_number, NULL, current->commands);
+				}
+				monty_data->current = current;
+				f(&stack, current->line_number);
 			}
-			monty_data->current = current;
-			f(&stack, current->line_number);
 		}
 		current = current->next;
 	}
