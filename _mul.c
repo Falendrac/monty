@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
- * _add - adds the top two elements of the stack
+ * _mul -  multiplies the second top element by the top element of the stack
  * @stack: address of pointer of the element af the top of the stack
  * @line_number: number of the line in the file
  */
 
-void _add(stack_t **stack, unsigned int line_number)
+void _mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr1, *ptr2;
 
@@ -15,12 +15,12 @@ void _add(stack_t **stack, unsigned int line_number)
 		free_line_t();
 		fclose(monty_data->fd);
 		free(monty_data);
-		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	ptr1 = *stack;
 	ptr2 = (*stack)->next;
-	ptr2->n += ptr1->n;
+	ptr2->n *= ptr1->n;
 	*stack = ptr2;
 	ptr2->prev = NULL;
 	free(ptr1);
