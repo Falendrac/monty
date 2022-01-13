@@ -40,5 +40,6 @@ void parse(char *line, int line_number)
 		value = _strdup(value);
 		if (comm != NULL)
 			new_line_t_end(comm, value, line_number);
+
 	}
 }
